@@ -1,7 +1,9 @@
 ---
 title: "Visualizing Starwars characters"
-author: "Add your name"
+author: "Matthew Espinosa"
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r load-packages, include=FALSE}
@@ -19,7 +21,7 @@ glimpse(starwars)
 ```{r scatterplot}
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C")
+  geom_point(color = "pink")
 ```
 
 ### Add labels for title, x and y axes, and size of points. Uncomment to see the effect.
@@ -27,12 +29,12 @@ ggplot(starwars,
 ```{r scatterplot-labels}
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C") +
+  geom_point(color = "pink") +
   labs(
-    #title = "___",
-    #x = "___", 
-    #y = "___",
-    #___
+    title = "Star War Character Mass By Weight",
+    x = "Height", 
+    y = "Mass",
+    size = "Birth Year"
     )
 ```
 

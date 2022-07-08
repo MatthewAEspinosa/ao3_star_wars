@@ -1,6 +1,6 @@
 Visualizing Starwars characters
 ================
-Add your name
+Matthew Espinosa
 
 ### Glimpse at the starwars data frame.
 
@@ -10,27 +10,27 @@ glimpse(starwars)
 
     ## Rows: 87
     ## Columns: 14
-    ## $ name       <chr> "Luke Skywalker", "C-3PO", "R2-D2", "Darth Vader", "Leia Or~
-    ## $ height     <int> 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2~
-    ## $ mass       <dbl> 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.~
-    ## $ hair_color <chr> "blond", NA, NA, "none", "brown", "brown, grey", "brown", N~
-    ## $ skin_color <chr> "fair", "gold", "white, blue", "white", "light", "light", "~
-    ## $ eye_color  <chr> "blue", "yellow", "red", "yellow", "brown", "blue", "blue",~
-    ## $ birth_year <dbl> 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, ~
-    ## $ sex        <chr> "male", "none", "none", "male", "female", "male", "female",~
-    ## $ gender     <chr> "masculine", "masculine", "masculine", "masculine", "femini~
-    ## $ homeworld  <chr> "Tatooine", "Tatooine", "Naboo", "Tatooine", "Alderaan", "T~
-    ## $ species    <chr> "Human", "Droid", "Droid", "Human", "Human", "Human", "Huma~
-    ## $ films      <list> <"The Empire Strikes Back", "Revenge of the Sith", "Return~
-    ## $ vehicles   <list> <"Snowspeeder", "Imperial Speeder Bike">, <>, <>, <>, "Imp~
-    ## $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1",~
+    ## $ name       <chr> "Luke Skywalker", "C-3PO", "R2-D2", "Darth Vader", "Leia Or…
+    ## $ height     <int> 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…
+    ## $ mass       <dbl> 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…
+    ## $ hair_color <chr> "blond", NA, NA, "none", "brown", "brown, grey", "brown", N…
+    ## $ skin_color <chr> "fair", "gold", "white, blue", "white", "light", "light", "…
+    ## $ eye_color  <chr> "blue", "yellow", "red", "yellow", "brown", "blue", "blue",…
+    ## $ birth_year <dbl> 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …
+    ## $ sex        <chr> "male", "none", "none", "male", "female", "male", "female",…
+    ## $ gender     <chr> "masculine", "masculine", "masculine", "masculine", "femini…
+    ## $ homeworld  <chr> "Tatooine", "Tatooine", "Naboo", "Tatooine", "Alderaan", "T…
+    ## $ species    <chr> "Human", "Droid", "Droid", "Human", "Human", "Human", "Huma…
+    ## $ films      <list> <"The Empire Strikes Back", "Revenge of the Sith", "Return…
+    ## $ vehicles   <list> <"Snowspeeder", "Imperial Speeder Bike">, <>, <>, <>, "Imp…
+    ## $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1",…
 
 ### Modify the following plot to change the color of all points to `"pink"`.
 
 ``` r
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C")
+  geom_point(color = "pink")
 ```
 
     ## Warning: Removed 51 rows containing missing values (geom_point).
@@ -42,12 +42,12 @@ ggplot(starwars,
 ``` r
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C") +
+  geom_point(color = "pink") +
   labs(
-    #title = "___",
-    #x = "___", 
-    #y = "___",
-    #___
+    title = "Star War Character Mass By Weight",
+    x = "Height", 
+    y = "Mass",
+    size = "Birth Year"
     )
 ```
 
