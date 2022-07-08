@@ -44,9 +44,9 @@ ggplot(starwars,
        aes(x = height, y = mass, color = gender, size = birth_year)) +
   geom_point(color = "pink") +
   labs(
-    title = "Star War Character Mass By Weight",
-    x = "Height", 
-    y = "Mass",
+    title = "The Relationship Between Star Wars Character's Mass and Weight",
+    x = "Height (cm)", 
+    y = "Mass (kg)",
     size = "Birth Year"
     )
 ```
@@ -65,16 +65,76 @@ or remove the `eval` option altogether since it’s set to `TRUE` by
 default.)
 
 ``` r
-ggplot(starwars, aes(___)) +
-  geom___
+ggplot(starwars, aes(y = eye_color)) +
+  geom_bar()+
+  labs(
+    title = "Star Wars Characters Eye Color Distribution",
+    x = "Frequency",
+    y = "Height (cm)"
+  )
 ```
+
+![](starwars_files/figure-gfm/barplot-1.png)<!-- -->
 
 ### Pick a single numerical variable and make a histogram of it.
 
 (This time no starter code is provided, you’re on your own!)
 
+``` r
+ggplot(starwars, aes(height)) +
+  geom_histogram(binwidth = 10)+
+  labs(
+    title = "Star Wars Character Heights",
+    x = "Height (cm)",
+    y = "Frequency"
+  )
+```
+
+    ## Warning: Removed 6 rows containing non-finite values (stat_bin).
+
+![](starwars_files/figure-gfm/histogram-1.png)<!-- -->
+
 ### Pick a numerical variable and a categorical variable and make a visualisation (you pick the type!) to visualise the relationship between the two variables. Along with your code and output, provide an interpretation of the visualisation.
 
-### Pick two categorical variables and make a visualisation to visualise the relationship between the two variables. Along with your code and output, provide an interpretation of the visualisation.
+``` r
+ggplot(starwars, aes(x = height, fill = gender)) +
+  geom_histogram(binwidth = 10, alpha = 0.5)+
+  labs(
+    title = "The Relationship Star Wars Character Height and Gender",
+    x = "Height (cm)",
+    y = "Frequency"
+  )
+```
+
+    ## Warning: Removed 6 rows containing non-finite values (stat_bin).
+
+![](starwars_files/figure-gfm/num-cat-1.png)<!-- -->
+
+Among taller characters in Star Wars, masculine characters are more
+represented than feminine characters. \### Pick two categorical
+variables and make a visualisation to visualise the relationship between
+the two variables. Along with your code and output, provide an
+interpretation of the visualisation.
+
+``` r
+ggplot(starwars, aes(x = gender, fill = homeworld)) +
+  geom_bar(position = "fill", alpha = 0.5)
+```
+
+![](starwars_files/figure-gfm/cat-cat-1.png)<!-- -->
 
 ### Pick two numerical variables and two categorical variables and make a visualisation that incorportes all of them and provide an interpretation with your answer.
+
+``` r
+ggplot(starwars, 
+       mapping = aes(x = height,
+                     y = mass,
+                     color = species,
+                     shape = gender)) +
+  geom_point()+
+  facet_grid(~gender)
+```
+
+    ## Warning: Removed 29 rows containing missing values (geom_point).
+
+![](starwars_files/figure-gfm/multi-1.png)<!-- -->
